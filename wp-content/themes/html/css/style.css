@@ -1,0 +1,69 @@
+@import url('../css/fonts.css');
+
+*{box-sizing:border-box}
+
+:root{
+    --head-font:'Helvetica Neue LT Pro';
+    --para-font:'Book Antiqua';
+    --yellow-color:#f5ed30;
+    --white-color:#fff;
+    --light-white-color:#eff0f2;
+    --blc-color:#000;
+    --light-blc-color:#060709;
+    --gray-color:#717171;
+}
+
+h1,h2,h3,h4,h5,h6{font-family:var(--head-font);font-weight: normal;font-style: normal;text-transform: uppercase;font-size: 34px;color:var(--white-color);}
+
+p{font-family:var(--para-font);font-weight: normal;font-style: normal;font-size: 16px;color:var(--white-color);letter-spacing:1.5px;}
+
+img{max-width:100%}
+
+ul,ol,li,a{text-decoration:none;list-style:none;margin:0}
+
+.container{width:100%;max-width:1380px;margin:0 auto;display:block}
+
+body{scroll-behavior:smooth;overflow-x: hidden;}
+
+/* section header */
+.navbar{position:absolute;top:0;left:0;background-color:transparent;padding:0;width:100%;z-index:99;}
+.overlape-belt{position:absolute;background-color:var(--blc-color);height:100%;width:100%;left:20%;top:0;}
+.overlape-belt::after{width:100%;height:3px;content:'';background:linear-gradient(160deg, rgba(254,247,169,1) 0%, rgba(254,225,1,1) 100%);position:absolute;bottom:-3px;left:0;z-index:1;}
+.navbar .container{background-color:var(--blc-color);position:relative;padding-top:70px;}
+.navbar-brand{background: linear-gradient(160deg, rgba(254,247,169,1) 0%, rgba(254,225,1,1) 100%);position: absolute;top:8px;left:0;padding:65px 50px 30px 50px;border-radius:0 0 12px 12px;z-index:2;}
+.navbar button i{color:var(--white-color);font-size:20px}
+.navbar .navbar-toggler{border:none}
+.navbar-toggler:focus,
+.navbar-toggler:active{outline:none;box-shadow:none}
+.navbar .navbar-nav .nav-item .nav-link{padding:0 40px;font-family:var(--head-font);font-size:18px;transition:all .5s ease-in-out;color:var(--white-color);letter-spacing:0.7px;position:relative;line-height:60px;border-right:1px solid var(--yellow-color);}
+.navbar .navbar-nav .nav-item .nav-link:hover{color:var(--yellow-color);}
+.navbar .navbar-nav .nav-item:last-child .nav-link{font-weight:bold;border:none;}
+.navbar .dropdown .dropdown-menu{border:none;background-color:var(--white-color);border-radius:0;width:100%;padding:0;background: linear-gradient(160deg, rgba(254,247,169,1) 0%, rgba(254,225,1,1) 100%);border-radius:0 0 12px 12px;overflow:hidden;}
+.navbar .dropdown .dropdown-menu li{padding:0;font-family:var(--head-font);font-size:16px;position:relative}
+.navbar .dropdown .dropdown-menu li a{padding:20px;transition:all .3s ease-in-out;}
+.navbar .dropdown:hover .dropdown-menu{display:block;transition:all .3s ease-in-out}
+.dropdown-item:focus, .dropdown-item:hover{background:var(--white-color);}
+
+/* section slider */
+.banner{background-image: url('../image/hero-banner.jpg');position:relative;height:100vh;overflow-x:hidden;background-repeat: no-repeat;background-size: cover;}
+.banner::before{position:absolute;content:'';width:100%;height:8px;background: linear-gradient(120deg, rgba(254,247,169,1) 0%, rgba(254,225,1,1) 100%);z-index:99;}
+.banner img{position:absolute;bottom:0;right:50px;}
+.banner .container{position:absolute;top:55%;left:50%;transform:translate(-50%, -50%);z-index:10;padding-left:22px;}
+.slider-element{position:absolute;top:0;left:0}
+.slider-content img{display:block;margin:0 auto;padding-bottom:20px}
+.slider-content h1{font-size:62px;font-weight:bold;margin: 0;position: relative;animation:fadeInRight 2s ease forwards}
+.slider-content h1:before{background-image:url('../image/quote.webp');position:absolute;left:-22px;top:0;width:50px;height:50px;content: '';background-size:30%;background-repeat:no-repeat;}
+.slider-content h1 span{color:var(--yellow-color);display:inline-block;}
+.slider-content p{font-size:48px;font-style:italic;color:var(--yellow-color);margin:0;position: relative;animation:fadeInLeft 2s ease forwards;display:inline-block;}
+.slider-content p:after{background-image:url('../image/quote.webp');position:absolute;top:0;width:50px;height:50px;content: '';background-size:30%;background-repeat:no-repeat;transform: scaleX(-1);right:-22px;}
+@keyframes fadeInLeft{
+    0%{opacity:0;transform:translateX(-30px)}
+    100%{opacity:1;transform:translateX(0px)}
+}
+@keyframes fadeInRight{
+    0%{opacity:0;transform:translateX(30px)}
+    100%{opacity:1;transform:translateX(0px)}
+}
+
+/* footer section */
+.footer{background-color:var(--yellow-color);padding:40px 0;}
